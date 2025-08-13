@@ -1,12 +1,6 @@
 ## Namaste DSA
 
 
-
-jhdk lmkjs
-
-shjdl  jfkjlk ofk fk jkls9  ikmmf 
-
-
 <details>
 <summary>Day 1</summary>
 
