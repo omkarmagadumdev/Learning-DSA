@@ -400,24 +400,41 @@
 // console.log(result);
 
 
-//10
-function pallindrome(n){
-    let rev =0;
-    while(n>0){
-       let rem = n%10;
-        rev = (10*rev)+ rem;
-        n = Math.floor(n/10);
+// //10
+// function pallindrome(n){
+//     let rev =0;
+//     while(n>0){
+//        let rem = n%10;
+//         rev = (10*rev)+ rem;
+//         n = Math.floor(n/10);
 
-    }
-     if(rev == num){
-        return  true;
-    }
-    else{
-        return false
-    }
+//     }
+//      if(rev == num){
+//         return  true;
+//     }
+//     else{
+//         return false
+//     }
 
-}
+// }
 
-let num = 121;
-let result = pallindrome(num);
-console.log(result)
+// let num = 121;
+// let result = pallindrome(num);
+// console.log(result)
+
+
+
+// var ispallindorome = function(x){
+//     if(x<0) return false
+//     let xcopy = x;
+//     let rev = 0;
+//     while(x>0){
+//         let rem = n%10;
+//         rev = (10*rev )+rem;
+//         n = Math.floor(x/10);
+//     }
+//     return xcopy == x
+// }
+// let num = 1245
+// let result = ispallindorome(num)
+// console.log(result)
