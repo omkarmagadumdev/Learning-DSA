@@ -438,3 +438,7 @@
 // let num = 1245
 // let result = ispallindorome(num)
 // console.log(result)
+
+
+// Arrays- easy,medium 
+
