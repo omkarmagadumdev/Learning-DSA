@@ -32,6 +32,18 @@ var removeElement = function(nums, val) {
  return x
 };
 ```
+3. Reverse String  [🔗](https://leetcode.com/problems/reverse-string/description/)
+```js
+var reverseString = function(s) {
+    let len = s.length;
+    let halflen = [len/2];
+    for(let i =0;i<halflen;i++){
+        let temp = s[i];
+        s[i] = s[len-1-i];
+        s[len-1-i] = temp
+    }
+};
+```
 
 <details>
 <summary>Day 1</summary>
