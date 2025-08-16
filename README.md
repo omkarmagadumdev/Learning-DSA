@@ -62,7 +62,7 @@ var maxProfit = function(prices) {
   return maxprofit
 };
 ```
-6. Merge Sorted Array
+5. Merge Sorted Array
  [🔗](https://leetcode.com/problems/merge-sorted-array/)
 ```js
 var merge = function(nums1, m, nums2, n) {
@@ -81,11 +81,11 @@ var merge = function(nums1, m, nums2, n) {
     }
 };
 ```
-7. [🔗]()
+6. [🔗]()
 ```js
  
 ```
-8. [🔗]()
+7. [🔗]()
 ```js
  
 ```
