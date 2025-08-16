@@ -44,14 +44,21 @@ var reverseString = function(s) {
     }
 };
 ```
+4.  Best Time to Buy and Sell Stock [🔗](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/) 
+```js
+var maxProfit = function(prices) {
+  let min = prices[0];
+  let maxprofit = 0;
+  for(let i=1;i<prices.length;i++){
+        if(prices[i]-min>maxprofit){
+            maxprofit = prices[i]-min;
 
-<details>
-<summary>Day 1</summary>
 
-- **Day 1:** Solved Two Sum (DSA), Express server setup (MERN)  
-- **Day 2:** Binary Search Binary Tree implementation, MongoDB connection (MERN)  
-- **Day 3:** Learned OS process scheduling, React hooks (MERN)  
-- … aur aise aage continue karo.
-
-</details>
-
+        }
+        if(prices[i]<min){
+            min = prices[i]
+        }
+  }
+  return maxprofit
+};
+```

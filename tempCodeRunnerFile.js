@@ -1,2 +1,1 @@
-
-let result  = palindrome(num);
+swap (s)
