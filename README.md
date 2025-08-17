@@ -117,7 +117,7 @@ var merge = function(nums1, m, nums2, n) {
 };
 ```
  
-8.Missing Number [🔗](https://leetcode.com/problems/missing-number/description/)
+8. Missing Number [🔗](https://leetcode.com/problems/missing-number/description/)
 ```js
 var missingNumber = function(nums) {
     let n = nums.length;
