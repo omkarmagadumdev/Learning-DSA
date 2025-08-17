@@ -1,17 +1,14 @@
-var buyandseel = function(prices){
-  let min = prices[0];
-  maxprofit = 0;
-  for(let i=1;i<prices.length;i++){
-    if(prices[i]-min > maxprofit){
-      maxprofit = prices[i]-min;
+var reverseString = function(s) {
+ let len = s.length;
+    let halflen = len/2;
+    for(let i =0;i<halflen;i++){
+      let temp = s[i];
+      s[i] = s[len-1-i];
+      s[len-1-i] = temp ;
     }
-    if(prices[i] < min){
-      min = prices[i];
-    }
-  }
-  return maxprofit
-}
+    return s;
+};
 
-let prices = [3,4,1,2,7,2,4,5];
-let result = buyandseel(prices);
-console.log(result)
+let s= ["h","e","l","l","o"];
+let result = reverseString(s);
+console.log(s)

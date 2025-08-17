@@ -81,7 +81,7 @@ var merge = function(nums1, m, nums2, n) {
     }
 };
 ```
-6. [🔗](https://leetcode.com/problems/move-zeroes/)
+6. Move Zeroes [🔗](https://leetcode.com/problems/move-zeroes/)
 ```js
  var moveZeroes = function(nums) {
     let x =0;
@@ -98,8 +98,46 @@ var merge = function(nums1, m, nums2, n) {
         }
 };
 ```
-7. [🔗]()
+7. Max Consecutive Ones [🔗](https://leetcode.com/problems/max-consecutive-ones/description/)
+```js
+ var findMaxConsecutiveOnes = function(nums) {
+    let currcount =  0;
+    let maxcount = 0;
+    for(let i=0;i<nums.length;i++){
+        if(nums[i] == 1){
+            currcount ++
+        }
+        else{
+            maxcount = Math.max(currcount,maxcount);
+            currcount =0;
+        }
+
+    }
+    return Math.max(currcount,maxcount)
+};
+```
+ 
+8.Missing Number [🔗](https://leetcode.com/problems/missing-number/description/)
+```js
+var missingNumber = function(nums) {
+    let n = nums.length;
+    let totalsum = n*(n+1)/2
+    let partialsum =0;
+    for(let i=0;i<nums.length;i++){
+        partialsum = partialsum + nums[i]
+    }
+    return  totalsum - partialsum
+};
+```
+8. [🔗]()
 ```js
  
 ```
+8. [🔗]()
+```js
  
+```
+8. [🔗]()
+```js
+ 
+```
