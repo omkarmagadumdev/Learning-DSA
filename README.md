@@ -129,9 +129,38 @@ var missingNumber = function(nums) {
     return  totalsum - partialsum
 };
 ```
-8. [🔗]()
+9. Single Number [🔗](https://leetcode.com/problems/single-number/description/)
 ```js
- 
+//not optimized 
+ var singleNumber = function(nums) {
+    let hash = {};
+    for(let i=0;i<nums.length;i++){
+       if(!hash[nums[i]]) {
+        hash[nums[i]] =1;
+
+       }
+       else{
+        hash[nums[i]]++
+       }
+    }
+    for(let i=0;i<nums.length;i++){
+        if(hash[nums[i]]==1){
+            return nums[i]
+        }
+    }
+};
+//optimized solution using bitwise zor for removing non duplicate number from and array 
+
+var singleNumber = function(nums) {
+    let xor =0;
+    for(let i=0;i<nums.length;i++){
+        xor = xor ^ nums[i];
+    }
+    return xor;
+};
+
+
+
 ```
 8. [🔗]()
 ```js
