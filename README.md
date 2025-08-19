@@ -170,3 +170,28 @@ var singleNumber = function(nums) {
 ```js
  
 ```
+
+# Recursion 
+
+1. print  n to 1 using recursion
+```js
+
+function print(n){
+    if(n<1) return;
+    console.log(n);
+    print(--n)
+}
+print(10)
+
+```
+2. print 1 to n using recursion
+```js 
+   let  n = 10;
+function print(x) {
+    if (x > n) return;
+    console.log(x);
+    print(++x);
+}
+
+print(1)
+```
