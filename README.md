@@ -195,3 +195,38 @@ function print(x) {
 
 print(1)
 ```
+3. sum of first  n numbers using recursion
+```js
+function sum(n){
+    if(n<1) return 0;
+    return n+sum(n-1);
+}
+console.log(sum(n));
+
+```
+4. Sum of all numbers in Array using recursion
+```js
+function sum(n) {
+    if (n == 0) return arr[0];
+    return arr[n]+sum(n-1)
+
+}
+let arr = [5,3,2,0,1]
+console.log(sum(arr.length-1))
+```
+
+5. Sum of all odd numbers in Array
+```js
+function sum(n) {
+    let isodd = ((arr[n] % 2) != 0);
+    if (n == 0) {
+    return isodd?arr[n]:0
+  }
+    return (isodd ? arr[n] : 0 )+  sum(n-1)
+}
+let arr = [5,3,2,0,1]
+console.log(sum(arr.length-1))
+```
+
+
+
