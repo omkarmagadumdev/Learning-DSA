@@ -225,7 +225,7 @@ function sum(n) {
     return (isodd ? arr[n] : 0 )+  sum(n-1)
 }
 let arr = [5,3,2,0,1]
-console.log(sum(arr.length-1))
+console.log(sum(arr.length-1));
 ```
 
 
