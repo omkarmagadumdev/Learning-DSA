@@ -162,16 +162,8 @@ var singleNumber = function(nums) {
 
 
 ```
-8. [🔗]()
-```js
- 
-```
-8. [🔗]()
-```js
- 
-```
 
-# Recursion 
+# Recursion Easy/Medium
 
 1. print  n to 1 using recursion
 ```js
@@ -226,10 +218,25 @@ function sum(n) {
 }
 let arr = [5,3,2,0,1]
 console.log(sum(arr.length-1))
-
-
-6. 
 ```
+6. Factorial of n using recursion
 
+```js
+function factorial(n) {
+  if (n< 1) return 1;
+  return n * factorial(n-1)
+}
 
+console.log(factorial(5))
 
+```
+7. Power of Two using recursion [🔗](https://leetcode.com/problems/power-of-two/submissions/1744121929/) 
+
+```js
+var isPowerOfTwo = function(n) {
+if(n==1) return true;
+else if((n%2 !=0) || n<1) return false;
+  return isPowerOfTwo(n/2)
+};
+
+```
