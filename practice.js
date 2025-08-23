@@ -1,13 +1,6 @@
-arr[5, 2, 0, 3, 6, 7];
-function sum(n) {
-  let isodd = arr[n] % 2 != 0;
-  if (n == 0) {
-    return isodd ? arr[n] : 0;
+var fib = function(n) {
+    if(n<=1) return n;
+    return fib(n-1)+fib(n-2)
+};
 
-  }
-  return (isodd ? arr[n] : 0) + sum(n - 1);
-
-
-}
-
-console.log(sum(arr.length - 1));
+fib(100)

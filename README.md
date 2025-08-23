@@ -239,4 +239,32 @@ else if((n%2 !=0) || n<1) return false;
   return isPowerOfTwo(n/2)
 };
 
+``` 
+8. Fibonacci Number using recursion [🔗](https://leetcode.com/problems/fibonacci-number/description/)
+
+```js
+var fib = function (n) {
+  if (n <= 1) return n;
+  return fib(n - 1) + fib(n - 2)
+};
+
+
+```
+
+# Searching and Sorting - Easy & medium
+
+1. Linear Search
+
+```js
+function  fun(arr, target) {
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] == target) {
+      return i
+    }
+  }
+  return -1
+}
+
+let num = [2, 1, 2, 4, 0]
+console.log(fun(num,0))
 ```
