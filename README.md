@@ -267,4 +267,28 @@ function  fun(arr, target) {
 
 let num = [2, 1, 2, 4, 0]
 console.log(fun(num,0))
+
+// Time complexity:O(2^n)
+```
+2. Binary Search [🔗](https://leetcode.com/problems/binary-search/description/)
+```js
+var search = function(nums, target) {
+    let left = 0;
+    let right = nums.length-1;
+    while(right>=left){
+        let middle = Math.floor((left + right)/2)
+        if(target == nums[middle]){
+            return middle
+        }
+        else if(target < nums[middle]){
+            right = middle -1 
+
+        }
+        else{
+            left = middle +1
+        }
+    }
+    return -1
+};// Time complexity: O(logn)
+// space complexity:O(1)
 ```
