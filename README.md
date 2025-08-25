@@ -292,3 +292,58 @@ var search = function(nums, target) {
 };// Time complexity: O(logn)
 // space complexity:O(1)
 ```
+3. Bubble Sort
+```js
+function BubbleSort(arr) {
+    let n = arr.length
+ let isSwapped = false
+    for (let i = 0; i < n ; i++){
+        for (let j = 0; j < n - 1 - i; j++){
+            if (arr[j] > arr[j + 1]) {
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp
+                isSwapped = true;
+            }
+        }
+            if (!isSwapped) break;
+    }
+    return arr
+}
+
+let arr = [2, 1, 5, 4];
+console.log(BubbleSort(arr))
+//Time complexity: O(n^2)
+// space complexity: O(1)
+```
+4. Selection Sort  
+
+```js
+function selectionSort(arr) {
+    let n = arr.length;
+
+    for (let i = 0; i < n - 1; i++) {
+        let min = i;
+
+        for (let j = i + 1; j < n; j++) {
+            if (arr[j] < arr[min]) {
+                min = j;
+            }
+        }
+
+        // Swap
+        let temp = arr[min];
+        arr[min] = arr[i];
+        arr[i] = temp;
+    }
+
+    return arr;
+}
+
+let arr = [7, 1, 5, 4, 3, 2];
+console.log(selectionSort(arr)); 
+
+//Time conplxity: O(n^2);
+// space complexity:O(1)
+```
+5. 
