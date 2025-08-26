@@ -346,4 +346,21 @@ console.log(selectionSort(arr));
 //Time conplxity: O(n^2);
 // space complexity:O(1)
 ```
-5. 
+5. Insertion Sort
+```js
+function insertionsort(arr) {
+    for (let i = 1; i < arr.length; i++){
+        let cur = arr[i];
+        let prev = i - 1;
+        while (arr[prev] > cur && prev >= 0) {
+            arr[prev + 1] = arr[prev];
+            prev-- 
+        }
+        arr[prev + 1] = cur 
+    }
+    return arr
+}
+
+let arr = [3, 4, 5, 7, 1, 2];
+console.log(insertionsort(arr))
+```
