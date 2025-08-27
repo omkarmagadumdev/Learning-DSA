@@ -364,3 +364,33 @@ function insertionsort(arr) {
 let arr = [3, 4, 5, 7, 1, 2];
 console.log(insertionsort(arr))
 ```
+6. Merge Sort [🔗](https://leetcode.com/problems/sort-an-array/description/)
+```js
+var sortArray = function(nums) {
+    if(nums.length<=1) return nums;
+    let middle = Math.floor(nums.length/2);
+    let left = sortArray(nums.slice(0,middle));
+    let right = sortArray(nums.slice(middle));
+    return merge(left,right)
+
+};
+
+
+function merge(left,right){
+    let res = [];
+    let p1 =0;
+    let p2 =0;
+    while(p1<left.length && p2<right.length){
+        if(left[p1]<right[p2]){
+            res.push (left[p1]);
+            p1++
+
+        }
+        else{
+            res.push(right[p2]);
+            p2++
+        }
+    }
+     return res.concat(left.slice(p1)).concat(right.slice(p2));
+}
+```
