@@ -394,3 +394,9 @@ function merge(left,right){
      return res.concat(left.slice(p1)).concat(right.slice(p2));
 }
 ```
+
+# Linked List 
+
+
+## Introduction to Linked List [🔗](https://namastedev.com/learn/namaste-dsa/introduction-to-linked-list-dsa-notes)
+
