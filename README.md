@@ -400,3 +400,91 @@ function merge(left,right){
 
 ## Introduction to Linked List [🔗](https://namastedev.com/learn/namaste-dsa/introduction-to-linked-list-dsa-notes)
 
+1.  Design Linked List [🔗](https://leetcode.com/problems/design-linked-list/description/)
+
+```js
+function node(val){
+    this.val = val;
+    this.next = null;
+}
+var MyLinkedList = function() {
+    this.head = null;
+    this.size =  o;
+    
+};
+
+/** 
+ * @param {number} index
+ * @return {number}
+ */
+MyLinkedList.prototype.get = function(index) {
+    
+};
+
+/** 
+ * @param {number} val
+ * @return {void}
+ */
+MyLinkedList.prototype.addAtHead = function(val) {
+  let newnode = new Node(val);
+  newnode.next = this.head;
+  this.head = newnode;
+  this.size++
+};
+
+/** 
+ * @param {number} val
+ * @return {void}
+ */
+MyLinkedList.prototype.addAtTail = function(val) {
+let newnode = new Node(val);
+if(this.head ==null){
+    this.head = newnode;
+
+}
+else{
+    let cur = this.head;
+    while(cur.next != null){
+        cur = cur.next
+    }
+    cur.next = newnode
+}
+this.size++
+};
+
+/** 
+ * @param {number} index 
+ * @param {number} val
+ * @return {void}
+ */
+MyLinkedList.prototype.addAtIndex = function(index, val) {
+         let newnode = new node(val);
+    if(index == 0){
+        this.addAtHead(val);
+        return 
+    }
+    else if(index == this.size){
+        this.addAtTail
+        return
+    }
+    else{
+    let cur = this.head;
+    for(let i =0;i<index-1;i++){
+        cur = cur.next;
+
+    }
+    newnode.next =cur.next;
+    cur.next = newnode
+
+    }
+   this.size++
+};
+
+/** 
+ * @param {number} index
+ * @return {void}
+ */
+MyLinkedList.prototype.deleteAtIndex = function(index) {
+    
+};
+```
