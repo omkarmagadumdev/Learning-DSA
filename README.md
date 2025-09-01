@@ -488,3 +488,38 @@ MyLinkedList.prototype.deleteAtIndex = function(index) {
     
 };
 ```
+2. Middle of Linked List [🔗](https://leetcode.com/problems/middle-of-the-linked-list/)
+
+Aproch 1:cnvert into array
+`spacecomplexity:O(n)`
+
+Approch 2: slow and fast pointer approch
+```js
+var middleNode = function(head) {
+    let slow = head;
+    let fast = head
+    while(fast != null && fast.next != null){
+        slow = slow.next;
+        fast = fast.next.next
+    }
+    return slow
+};
+// time complexity:O(n);
+// space complexity:O(1)
+```
+
+3. Reverse Linked List [🔗](https://leetcode.com/problems/reverse-linked-list/description/)
+```js
+var reverseList = function(head) {
+    let prev = null;
+    let cur = head;
+    while(cur){
+        let temp = cur.next
+       cur.next =prev;
+       prev = cur
+        cur = temp
+    }
+    head = prev
+    return head
+};
+```
