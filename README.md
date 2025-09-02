@@ -409,7 +409,7 @@ function node(val){
 }
 var MyLinkedList = function() {
     this.head = null;
-    this.size =  o;
+    this.size =  0;
     
 };
 
@@ -523,3 +523,82 @@ var reverseList = function(head) {
     return head
 };
 ```
+4. Linked List Cycle - Hash Table(Approch 1 ) [🔗](https://leetcode.com/problems/linked-list-cycle/description/).
+```js
+var hasCycle = function(head) {
+    let seenode = new Set();
+    let cur = head;
+    while(cur){
+        seenode.add(cur);
+        cur = cur.next
+        if(seenode.has(cur)) return true;
+
+    }
+    return false
+
+};
+// TC:O(n)
+// SC:O(n)
+```
+Linked List Cycle - Floyd's Algorithm 
+
+```js
+var hasCycle = function(head) {
+    if(head == null) return false
+    let slow = head;
+    let fast = head.next;
+    while(slow != fast){
+        
+        if(fast == null || fast.next== null){
+            return false
+        }
+        slow = slow.next;
+        fast = fast.next.next
+    }
+    return true
+};
+// TC:O(n);
+// SC:O(1)
+```
+
+5. Palindrome Linked List [🔗](https://leetcode.com/problems/palindrome-linked-list/description/)
+```js
+var isPalindrome = function(head) {
+    
+    // find the middl element
+    let slow = head;
+    let fast = head;
+    while(fast && fast.next){
+
+        slow = slow.next;
+        fast = fast.next.next;
+
+    }
+    
+  // revrse the secondhalf
+    let prev = null;
+    let cur = slow;
+    while(cur){
+        let temp = cur.next;
+        cur.next= prev;
+        prev = cur;
+        cur = temp
+    }
+  
+
+  let firstlist = head;
+  let secondlist = prev;
+  while(secondlist ){
+    if(firstlist.val != secondlist.val){
+        return false
+    }
+    firstlist= firstlist.next;
+    secondlist = secondlist.next
+  }
+return true
+};
+//TC:O(n)
+//SC:O(1)
+```
+
+[🔗]()

@@ -440,5 +440,4 @@
 // console.log(result)
 
 
-// Arrays- easy,medium 
 
