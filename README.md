@@ -601,4 +601,84 @@ return true
 //SC:O(1)
 ```
 
-[🔗]()
+6. Intersection of two Linked Lists[🔗](https://leetcode.com/problems/intersection-of-two-linked-lists/)
+
+`Note:`Searching an element in LL takes O(n),hash map its takes O(1).
+
+```js
+var getIntersectionNode = function(headA, headB) {
+    let set = new Set();
+    while(headA){
+        set.add(headA);
+        headA = headA.next
+    }
+
+    while(headB){
+        if(set.has(headB)){
+            return headB
+        }
+        else{
+            headB = headB.next
+        }
+    }
+    return null
+};
+// TC:O(1)
+// SC:O(n)
+```
+7. Remove Linked List Elements [🔗](https://leetcode.com/problems/remove-linked-list-elements/)
+
+```js
+var removeElements = function(head, val) {
+    let sentinal = new ListNode();
+     sentinal.next = head;
+
+
+     let prev = sentinal
+     while(prev && prev.next){
+            if(prev.next.val == val){
+                prev.next = prev.next.next;
+
+            }
+            else{
+
+           prev = prev.next
+            }
+     }
+     return sentinal.next
+};
+```
+
+
+8. Remove nth node from end of List - Two Pass [🔗](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+
+```js
+var removeNthFromEnd = function(head, n) {
+    let sentinel = new ListNode();
+    sentinel.next = head;
+    // length of the LL
+    let length = 0;
+    while(head){
+        head = head.next;
+        length++
+    }
+    // prev pos
+
+    let prevpos = length -n;
+
+    // Delete postion
+    let prev = sentinel;
+for(let i =0;i<prevpos;i++){
+prev = prev.next
+
+}
+prev.next = prev.next.next
+
+
+    return sentinel.next
+};
+// TC:O(n)
+// SC:O(1)
+```
+6. [🔗]()
+6. [🔗]()
