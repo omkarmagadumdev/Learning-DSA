@@ -680,5 +680,53 @@ prev.next = prev.next.next
 // TC:O(n)
 // SC:O(1)
 ```
-6. [🔗]()
+One pass 
+```js
+var removeNthFromEnd = function(head, n) {
+    // add the sentinel node
+        let sentinel = new  ListNode();
+        sentinel.next = head;
+
+
+
+    // move the first pointer ahead by n
+   let first = sentinel;
+   for(let i = 0;i<n;i++){
+    first = first.next
+   }
+
+    // move both pointers until the first pointer reches the last node
+    let second = sentinel
+        while(first.next){
+            second = second.next
+            first = first.next;
+        }
+
+    // delete the second.next
+   second.next = second.next.next
+        return sentinel.next
+};
+// TC:O(n)
+// SC:O(1)
+```
+9.Remove Duplicates from Sorted List [🔗](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
+
+```js
+var deleteDuplicates = function(head) {
+    let cur = head
+   
+    while(cur && cur.next){
+  if(cur.val == cur.next.val){
+         cur.next = cur.next.next
+         
+  }
+  else{
+    cur= cur.next
+  }
+    }
+    return head
+};
+// TC:O(n)
+// SC:O(1)
+```
 6. [🔗]()
