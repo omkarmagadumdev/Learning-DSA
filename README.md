@@ -709,7 +709,7 @@ var removeNthFromEnd = function(head, n) {
 // TC:O(n)
 // SC:O(1)
 ```
-9.Remove Duplicates from Sorted List [🔗](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
+9. Remove Duplicates from Sorted List [🔗](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
 
 ```js
 var deleteDuplicates = function(head) {
@@ -729,4 +729,29 @@ var deleteDuplicates = function(head) {
 // TC:O(n)
 // SC:O(1)
 ```
+10. Odd Even Linked List[🔗](https://leetcode.com/problems/odd-even-linked-list/description/)
+
+```js
+var oddEvenList = function(head) {
+    if(!head || !head.next) return head
+ let odd = head;
+ let even = head.next;
+ let evenstart = even;
+ while(odd.next && even.next){
+  
+
+    odd.next = odd.next.next;
+    even.next = even.next.next
+    odd = odd.next;
+    even = even.next
+ }
+ odd.next = evenstart
+ return head
+};
+// TC:O(n)
+// Sc:O(1)
+```
+6. [🔗]()
+6. [🔗]()
+6. [🔗]()
 6. [🔗]()
