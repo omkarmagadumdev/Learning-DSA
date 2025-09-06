@@ -751,7 +751,28 @@ var oddEvenList = function(head) {
 // TC:O(n)
 // Sc:O(1)
 ```
-6. [🔗]()
+11.Add Two Numbers [🔗](https://leetcode.com/problems/add-two-numbers/description/)
+```js
+var addTwoNumbers = function(l1, l2) {
+    let ans = new ListNode();   // dummy node
+    let anhead = ans;           // store head
+    let carry = 0;
+
+    while(l1 || l2 || carry){
+        let sum = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + carry;
+        carry = Math.floor(sum / 10);
+        let digit = sum % 10;
+
+        ans.next = new ListNode(digit);
+        ans = ans.next;
+
+        if (l1) l1 = l1.next;
+        if (l2) l2 = l2.next;
+    }
+
+    return anhead.next;
+};
+```
 6. [🔗]()
 6. [🔗]()
 6. [🔗]()
