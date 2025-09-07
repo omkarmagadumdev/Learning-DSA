@@ -393,6 +393,8 @@ function merge(left,right){
     }
      return res.concat(left.slice(p1)).concat(right.slice(p2));
 }
+//SC:O(nlogn)
+//TC:O(n)
 ```
 
 # Linked List 
