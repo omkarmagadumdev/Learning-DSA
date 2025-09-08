@@ -489,6 +489,15 @@ MyLinkedList.prototype.addAtIndex = function(index, val) {
 MyLinkedList.prototype.deleteAtIndex = function(index) {
     
 };
+
+
+// Operation	Time Complexity	Space Complexity
+// get(index)	O(n)	O(1)
+// addAtHead(val)	O(1)	O(1)
+// addAtTail(val)	O(n)	O(1)
+// addAtIndex	O(n)	O(1)
+// deleteAtIndex	O(n)	O(1)
+// Whole List	—	O(n)
 ```
 2. Middle of Linked List [🔗](https://leetcode.com/problems/middle-of-the-linked-list/)
 
