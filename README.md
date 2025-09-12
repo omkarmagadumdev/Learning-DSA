@@ -518,7 +518,7 @@ MyLinkedList.prototype.deleteAtIndex = function(index) {
 ```
 2. Middle of Linked List [🔗](https://leetcode.com/problems/middle-of-the-linked-list/)
 
-Aproch 1:cnvert into array
+Aproch 1:convert into array
 `spacecomplexity:O(n)`
 
 Approch 2: slow and fast pointer approch
