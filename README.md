@@ -405,7 +405,7 @@ function merge(left,right){
 1.  Design Linked List [🔗](https://leetcode.com/problems/design-linked-list/description/)
 
 ```js
-function node(val){
+function Node(val){
     this.val = val;
     this.next = null
 
@@ -433,9 +433,10 @@ MyLinkedList.prototype.get = function(index) {
  * @return {void}
  */
 MyLinkedList.prototype.addAtHead = function(val) {
-    let newnode = new Node(val);
-    newnode.next  = this.head;
-    this.head = newnode
+    let newNode = new Node(val);
+    newNode.next  = this.head;
+    this.head = newNode
+    this.size++
 };
 
 /** 
@@ -443,9 +444,9 @@ MyLinkedList.prototype.addAtHead = function(val) {
  * @return {void}
  */
 MyLinkedList.prototype.addAtTail = function(val) {
-    let newnode = new Node(val);
+    let newNode = new Node(val);
     if(this.head == null){
-        this.head = newnode
+        this.head = newNode
     }
     else{
           let cur = this.head;
@@ -453,7 +454,7 @@ MyLinkedList.prototype.addAtTail = function(val) {
         cur = cur.next
 
     }
-    cur.next = newnode;
+    cur.next = newNode;
     }
     this.size++
 };
@@ -464,8 +465,11 @@ MyLinkedList.prototype.addAtTail = function(val) {
  * @return {void}
  */
 MyLinkedList.prototype.addAtIndex = function(index, val) {
-    let newnode = new Node(val);
-    if(this.head == null){
+    let newNode = new Node(val);
+
+    if(index < 0 || index > this.size) return;
+
+    if(index == 0){
       this.addAtHead(val);
       return 
     }
@@ -474,12 +478,12 @@ MyLinkedList.prototype.addAtIndex = function(index, val) {
         return
     }
     else{
-
+            let cur = this.head
     for(let i =0;i<index-1;i++){
         cur = cur.next
     }
-        newnode.next = cur.next;
-        cur.next = newnode;
+        newNode.next = cur.next;
+        cur.next = newNode;
     }
         this.size++
 };
@@ -492,14 +496,17 @@ MyLinkedList.prototype.deleteAtIndex = function(index) {
     if(index<0 || index>=this.size) return;
     if(index == 0) {
         this.head = this.head.next
+        this.size--;
+        return;
+
     }
     let cur = this.head;
     for(let i =0;i<index-1;i++){
          cur = cur.next
     }
     cur.next = cur.next.next
+    this.size--
 };
-
 
 // Operation	Time Complexity	Space Complexity
 // get(index)	O(n)	O(1)
