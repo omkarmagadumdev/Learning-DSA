@@ -174,6 +174,9 @@ function print(n){
     print(--n)
 }
 print(10)
+//TC:O(n)
+//SC::O(n)
+
 
 ```
 2. print 1 to n using recursion
@@ -184,7 +187,8 @@ function print(x) {
     console.log(x);
     print(++x);
 }
-
+//TC:O(n)
+//SC:O(n)
 print(1)
 ```
 3. sum of first  n numbers using recursion
@@ -194,6 +198,8 @@ function sum(n){
     return n+sum(n-1);
 }
 console.log(sum(n));
+//TC:O(n)
+//SC:O(n)
 
 ```
 4. Sum of all numbers in Array using recursion
@@ -205,6 +211,8 @@ function sum(n) {
 }
 let arr = [5,3,2,0,1]
 console.log(sum(arr.length-1))
+//TC:O(n)
+//SC:O(n)
 ```
 
 5. Sum of all odd numbers in Array
@@ -218,6 +226,8 @@ function sum(n) {
 }
 let arr = [5,3,2,0,1]
 console.log(sum(arr.length-1))
+//TC:O(n)
+//SC:O(n)
 ```
 6. Factorial of n using recursion
 
@@ -229,6 +239,8 @@ function factorial(n) {
 
 console.log(factorial(5))
 
+//TC:O(n)
+//SC:O(n)
 ```
 7. Power of Two using recursion [🔗](https://leetcode.com/problems/power-of-two/submissions/1744121929/) 
 
@@ -238,6 +250,8 @@ if(n==1) return true;
 else if((n%2 !=0) || n<1) return false;
   return isPowerOfTwo(n/2)
 };
+//TC:O(logn)
+//SC:O(logn)
 
 ``` 
 8. Fibonacci Number using recursion [🔗](https://leetcode.com/problems/fibonacci-number/description/)
@@ -247,7 +261,8 @@ var fib = function (n) {
   if (n <= 1) return n;
   return fib(n - 1) + fib(n - 2)
 };
-
+//TC:O(2^n)
+//SC:O(n)
 
 ```
 
