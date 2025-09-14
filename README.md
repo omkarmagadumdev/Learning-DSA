@@ -815,6 +815,8 @@ var addTwoNumbers = function(l1, l2) {
 
     return anhead.next;
 };
+// SC:O(n)
+// TC:O(n)
 ```
 6. [🔗]()
 6. [🔗]()
