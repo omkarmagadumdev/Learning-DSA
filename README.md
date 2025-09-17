@@ -794,7 +794,7 @@ var oddEvenList = function(head) {
 // TC:O(n)
 // Sc:O(1)
 ```
-11.Add Two Numbers [🔗](https://leetcode.com/problems/add-two-numbers/description/)
+11. Add Two Numbers [🔗](https://leetcode.com/problems/add-two-numbers/description/)
 ```js
 var addTwoNumbers = function(l1, l2) {
     let ans = new ListNode();   // dummy node
@@ -820,7 +820,80 @@ var addTwoNumbers = function(l1, l2) {
 ```
 ```
 ```
-6. [🔗]()
+12. Merge Two Sorted Lists[🔗](https://leetcode.com/problems/merge-two-sorted-lists/)
 
 
-revision 
+// without dummy node
+```js
+var mergeTwoLists = function(l1, l2) {
+    if(l1 ==null){
+        return l2
+    }
+    else if(l2== null){
+        return l1
+    }
+let cur = null;
+    if(l1.val < l2.val){
+        cur = l1;
+        l1 = l1.next
+    }
+    else{
+            
+        cur = l2;
+        l2 = l2.next
+    }
+  
+    
+    let curcopy = cur
+
+    while(l1 &&  l2){
+        if(l1.val <l2.val){
+            cur.next = l1;
+            l1 = l1.next;
+        }
+        else{
+            cur.next = l2;
+            l2 = l2.next
+        }
+        cur = cur.next
+    }
+    if(!l1){
+        cur.next = l2
+    }
+    if(!l2){
+        cur.next = l1
+    }
+    
+    
+    return curcopy
+};
+```
+```js  with dummynode 
+var mergeTwoLists = function(l1, l2) {
+   
+
+    let dummy = new ListNode();
+    let cur = dummy;
+
+    while(l1 &&  l2){
+        if(l1.val <l2.val){
+            cur.next = l1;
+            l1 = l1.next;
+        }
+        else{
+            cur.next = l2;
+            l2 = l2.next
+        }
+        cur = cur.next
+    }
+    if(!l1){
+        cur.next = l2
+    }
+    if(!l2){
+        cur.next = l1
+    }
+    
+    
+    return dummy.next
+};
+```
