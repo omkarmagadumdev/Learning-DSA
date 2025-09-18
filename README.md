@@ -897,3 +897,78 @@ var mergeTwoLists = function(l1, l2) {
     return dummy.next
 };
 ```
+
+13. Rotate List[🔗](https://leetcode.com/problems/rotate-list/)
+```js
+var rotateRight = function(head, k) {
+    if(!head || !head.next) return head
+
+    let length = 0;
+    let find = head
+    while(find){
+        length++
+        find = find.next
+    }
+    k = k % length
+
+    let f = head;
+    let s = head;
+    for(let i =0;i<k;i++){
+        f = f.next
+    }
+
+    while(f.next){
+        s = s.next
+        f = f.next
+    }
+    f.next = head;
+    let newhead = s.next
+    s.next = null;
+  return newhead
+
+};
+```
+14. Swap Nodes in Pairs - Iterative Approach [🔗](https://leetcode.com/problems/swap-nodes-in-pairs/description/)
+```js
+var swapPairs = function(head) {
+    if(!head || !head.next) return head;
+
+    let sentinel = new ListNode();
+    sentinel.next = head;
+
+
+    let p = sentinel;
+    let c = head;
+    let n = head.next
+
+    while(c && n){
+        p.next = n;
+        c.next = n.next;
+        n.next = c
+        p = c;
+        c = p.next;
+        n =  c && c.next
+    }
+
+ return sentinel.next
+
+};
+// TC:O(n)
+// SC:o(1)
+```
+Swap Nodes in Pair - Recursive Approach
+```js
+var swapPairs = function(head) {
+    if(!head || !head.next) return head
+    let l = head
+    let r = head.next
+    l.next = swapPairs(r.next);
+    r.next = l;
+    return r 
+};
+```
+13. [🔗]()
+13. [🔗]()
+13. [🔗]()
+13. [🔗]()
+13. [🔗]()
