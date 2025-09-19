@@ -967,8 +967,101 @@ var swapPairs = function(head) {
     return r 
 };
 ```
-13. [🔗]()
-13. [🔗]()
+
+# String Easy/Medium 
+
+15. Length of Last Word - Approach 1 - Two Loops[🔗](https://leetcode.com/problems/length-of-last-word/)
+```js
+var lengthOfLastWord = function(s) {
+    s= s.trim();
+    s= s.split(" ");
+    return s[s.length-1].length
+};
+// TC:trim()loop = O(n) split (" ")O(n)
+// SC:O(n)
+```
+```js
+var lengthOfLastWord = function(s) {
+    let n = s.length-1;
+    while(n>=0){
+            if(s[n] == " "){
+                --n
+            }
+            else{
+                break;
+
+            }
+    }
+            let count =0
+            while(n>=0){
+                    if(s[n] != " "){
+                        --n;
+                        ++count; 
+                    }
+                    else{
+                        break
+                    }
+            }
+
+    
+    return count
+};
+// TC:O(n)
+// SC:O(1)
+```
+
+```js
+var lengthOfLastWord = function(s) {
+  let n = s.length - 1;
+  let count = 0;
+  while(n>=0){
+        if(s[n] != " "){
+            count++
+            n--
+        }
+        else if(count>0){
+            break;
+
+        }
+        else{
+            n--
+        }
+  }
+  return count
+};
+```
+13. Find Words Containing Character[🔗](https://leetcode.com/problems/find-words-containing-character/)
+
+```js
+var findWordsContaining = function(words, x) {
+    let res = []
+    for(let i =0;i<words.length;i++){
+        if(words[i].includes(x)){
+             res.push(i)
+
+        }
+    }
+    return res
+};
+// TC:O(n)
+// SC:O(n)
+```
+```js
+var findWordsContaining = function(words, x) {
+    let res = []
+   for(let i =0;i<words.length;i++){
+    for(let j =0 ;j<words[i].length;j++){
+        if(words[i][j] == x){
+                res.push(i);
+                break
+        }
+    }
+   }
+   return res
+};
+// TC:O(n^2) or O(m*n) and its o(n) m is breaking early;
+// SC:O(1) because we are not using array in between and we are using it just store the value  
+```
 13. [🔗]()
 13. [🔗]()
 13. [🔗]()
