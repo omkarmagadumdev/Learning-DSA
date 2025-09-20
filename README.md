@@ -970,7 +970,7 @@ var swapPairs = function(head) {
 
 # String Easy/Medium 
 
-15. Length of Last Word - Approach 1 - Two Loops[🔗](https://leetcode.com/problems/length-of-last-word/)
+1. Length of Last Word - Approach 1 - Two Loops[🔗](https://leetcode.com/problems/length-of-last-word/)
 ```js
 var lengthOfLastWord = function(s) {
     s= s.trim();
@@ -1030,7 +1030,7 @@ var lengthOfLastWord = function(s) {
   return count
 };
 ```
-13. Find Words Containing Character[🔗](https://leetcode.com/problems/find-words-containing-character/)
+2. Find Words Containing Character[🔗](https://leetcode.com/problems/find-words-containing-character/)
 
 ```js
 var findWordsContaining = function(words, x) {
@@ -1062,6 +1062,71 @@ var findWordsContaining = function(words, x) {
 // TC:O(n^2) or O(m*n) and its o(n) m is breaking early;
 // SC:O(1) because we are not using array in between and we are using it just store the value  
 ```
-13. [🔗]()
-13. [🔗]()
+3. Jewels and Stones [🔗](https://leetcode.com/problems/jewels-and-stones/)
+```js
+var numJewelsInStones = function(jewels, stones) {
+    let count = 0;
+    for(let i =0;i<stones.length;i++){
+        for(let j =0;j<jewels.length;j++){
+            if(jewels[j] == stones[i]){
+                count++
+            }
+        }
+    }
+    return count
+};
+
+```
+
+```js optimized
+var numJewelsInStones = function(jewels, stones) {
+    let set = new Set();
+    for(let i =0;i<jewels.length;i++){
+        set.add(jewels[i])
+    }
+
+    let count = 0;
+    for(let j =0;j<stones.length;j++){
+        if(set.has(stones[j])){
+            count++
+        }
+    }
+    return count
+};
+// TC:O(1) * O(n) = O(n) set 
+// SC:O(1) set is max 52 
+```
+
+13. Find Most Frequent Vowel and Consonant[🔗](https://leetcode.com/problems/find-most-frequent-vowel-and-consonant/)
+
+```js
+var maxFreqSum = function(s) {
+    let map = {};
+    for (let i = 0;i<s.length;i++){
+        if(!map[s[i]]){
+            map[s[i]] = 1
+        }
+        else{
+            map[s[i]]++
+        }
+    }
+    let vowels = ['a','e','i','o','u']
+    let maxvowels = 0;;
+    let maxconsonants =0
+
+    for(let i =0;i<s.length;i++){
+        if(vowels.includes(s[i])){
+            if(map[s[i]]>maxvowels){
+                maxvowels = map[s[i]]
+            }
+        }
+        else{
+            if(map[s[i]]>maxconsonants){
+                maxconsonants = map[s[i]]
+            }
+        }
+    }
+    return maxvowels + maxconsonants
+};
+```
 13. [🔗]()
