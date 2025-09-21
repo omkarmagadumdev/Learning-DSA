@@ -1097,7 +1097,7 @@ var numJewelsInStones = function(jewels, stones) {
 // SC:O(1) set is max 52 
 ```
 
-13. Find Most Frequent Vowel and Consonant[🔗](https://leetcode.com/problems/find-most-frequent-vowel-and-consonant/)
+4. Find Most Frequent Vowel and Consonant[🔗](https://leetcode.com/problems/find-most-frequent-vowel-and-consonant/)
 
 ```js
 var maxFreqSum = function(s) {
@@ -1129,4 +1129,61 @@ var maxFreqSum = function(s) {
     return maxvowels + maxconsonants
 };
 ```
+```js
+var maxFreqSum = function(s) {
+    let map = {};
+
+   for(let i =0;i<s.length;i++){
+    map[s[i]] = !map[s[i]] ? 1: ++map[s[i]]
+   
+   }
+    let mapkeys = Object.keys(map)
+    let vowels = ['a','e','i','o','u']
+    let maxvowels = 0;
+    let maxconsonents =0
+   for(let i= 0;i<mapkeys.length;i++){
+    if(vowels.includes(mapkeys[i])){
+    maxvowels = Math.max(map[mapkeys[i]],maxvowels)
+       
+       
+    }
+    else{
+       maxconsonents = Math.max(map[mapkeys[i]],maxconsonents)
+    }
+   }
+   return maxvowels +maxconsonents
+};
+// TC:O(1):O(n) = O(n)
+// SC:O(1)
+```
+5. Split a String in Balanced Strings[🔗](https://leetcode.com/problems/split-a-string-in-balanced-strings/)
+```js
+var balancedStringSplit = function(s) {
+    let r = 0;
+    let l =0;
+    let count = 0
+    for(let i =0;i<s.length;i++){
+            if(s[i] == 'R' ){
+                r++
+            }
+            else{
+                l++
+            }
+            if(r == l){
+                count++
+                r = 0;
+                l = 0
+            }
+    }
+    return count
+};
+// TC:O(n)
+// SC:O(1)
+```
+13. [🔗]()
+13. [🔗]()
+13. [🔗]()
+13. [🔗]()
+13. [🔗]()
+13. [🔗]()
 13. [🔗]()
