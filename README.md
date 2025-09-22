@@ -1180,7 +1180,50 @@ var balancedStringSplit = function(s) {
 // TC:O(n)
 // SC:O(1)
 ```
-13. [🔗]()
+```js
+var balancedStringSplit = function(s) {
+    let temp = 0
+    let count = 0
+    for(let i =0;i<s.length;i++){
+       
+            if(s[i] == 'R' ){
+                ++temp
+            }
+            else{
+                --temp
+            }
+            if(temp == 0){
+                count++
+               
+            }
+    }
+    return count
+};
+```
+6. Reverse String II [🔗](https://leetcode.com/problems/reverse-string-ii/)
+
+```js
+var reverseStr = function(s, k) {
+     s= s.split("")
+    for(let x =0;x<s.length; x = x+(2*k)){
+
+    let n = k
+    let mid = Math.floor(n/2);
+
+for(let i =0;i<mid;i++){
+    let temp = s[x+i];
+    s[x+i] = s[x+n-1-i];
+    s[x+n-1-i] = temp
+}
+            
+
+
+    }
+
+    return s.join("")
+};
+
+```
 13. [🔗]()
 13. [🔗]()
 13. [🔗]()
