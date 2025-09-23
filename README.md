@@ -1224,7 +1224,56 @@ for(let i =0;i<mid;i++){
 };
 
 ```
-13. [🔗]()
+7.  Valid Palindrome - Approach 1 - Extra Space[🔗]()
+
+```js
+var isPalindrome = function(s) {
+
+    s = s.toLowerCase();
+    let filterstring = "";
+    let rev = "
+    for(let i =0;i<s.length;i++){
+        if(s[i].match(/[a-z0-9]/i)){
+            filterstring += s[i];
+            rev = s[i] + rev 
+        }
+    }
+   
+//    let rev = filterstring.split("").reverse().join("")
+
+    return filterstring == rev
+
+};
+// TC:O(n)
+// SC:O(n)
+```
+
+```js
+var isPalindrome = function(s) {
+
+s = s.toLowerCase()
+    let p1 = 0;
+    let p2 = s.length-1;
+     let middle = Math.floor(s.length/2)
+    while(p1<p2){
+        if(!s[p1].match(/[a-z0-9]/i)) {
+            p1++
+        }
+        else if(!s[p2].match(/[a-z0-9]/i)) {
+            p2--
+        }
+       else if(s[p1] == s[p2]){
+
+       p1++;
+       p2--
+       }
+       else{
+        return false
+       }
+    }
+    return true
+};
+```
 13. [🔗]()
 13. [🔗]()
 13. [🔗]()
