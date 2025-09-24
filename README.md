@@ -1274,7 +1274,20 @@ s = s.toLowerCase()
     return true
 };
 ```
-13. [🔗]()
+8. Largest Odd Number in a String[🔗](https://leetcode.com/problems/largest-odd-number-in-string/)
+
+```js
+var largestOddNumber = function(num) {
+    let n = num.length-1;
+    while(n>=0){
+        if(Number(num[n]) % 2 != 0){
+            return num.substring(0,n+1)
+        }
+        n--
+    }
+    return ""
+};
+```
 13. [🔗]()
 13. [🔗]()
 13. [🔗]()
