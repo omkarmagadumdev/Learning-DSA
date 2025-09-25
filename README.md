@@ -1292,6 +1292,7 @@ var longestCommonPrefix = function(strs) {
 };
 // TC:O(s)
 // SC:O(1)
+
 ```
 13. [🔗]()
 13. [🔗]()
