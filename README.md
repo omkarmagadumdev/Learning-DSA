@@ -1277,16 +1277,21 @@ s = s.toLowerCase()
 8. Largest Odd Number in a String[🔗](https://leetcode.com/problems/largest-odd-number-in-string/)
 
 ```js
-var largestOddNumber = function(num) {
-    let n = num.length-1;
-    while(n>=0){
-        if(Number(num[n]) % 2 != 0){
-            return num.substring(0,n+1)
+var longestCommonPrefix = function(strs) {
+    let x =0;
+    while(x<strs[0].length){
+        let ch = strs[0][x];
+        for(let i =1;i<strs.length;i++){
+            if(ch != strs[i][x] || x== strs[i].lenght){
+                return strs[0].substring(0,x)
+            }
         }
-        n--
+        x++
     }
-    return ""
+  return strs[0]
 };
+// TC:O(s)
+// SC:O(1)
 ```
 13. [🔗]()
 13. [🔗]()
