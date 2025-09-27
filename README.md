@@ -1294,7 +1294,7 @@ var longestCommonPrefix = function(strs) {
 // SC:O(1)
 
 ```
-13. Valid Anagram[🔗]()
+9. Valid Anagram[🔗]()
 var isAnagram = function(s, t) {
       if (s.length !== t.length) return false;
   
@@ -1318,6 +1318,25 @@ var isAnagram = function(s, t) {
   
       return true;
   };
-13. [🔗]()
+10. Isomorphic Strings[🔗]()
+
+```js
+
+  var isIsomorphic = function(s, t) {
+      let mapSToT = {};
+      let mapTToS = {};
+  
+      for (let i = 0; i < s.length; i++) {
+          if (!mapSToT[s[i]] && !mapTToS[t[i]]) {
+              mapSToT[s[i]] = t[i];
+              mapTToS[t[i]] = s[i];
+          } else if (mapTToS[t[i]] !== s[i] || mapSToT[s[i]] !== t[i]) {
+              return false;
+          }
+      }
+  
+      return true;
+  };
+```
 13. [🔗]()
 13. [🔗]()
