@@ -1294,7 +1294,14 @@ var longestCommonPrefix = function(strs) {
 // SC:O(1)
 
 ```
-9. Valid Anagram[🔗]()
+9. Valid Anagram[🔗](https://leetcode.com/problems/valid-anagram/)
+```js
+var isAnagram = function(s, t) {
+    return  (s.split("").sort().join("")) == (t.split("").sort().join("")) 
+};
+```
+
+```js
 var isAnagram = function(s, t) {
       if (s.length !== t.length) return false;
   
@@ -1318,6 +1325,10 @@ var isAnagram = function(s, t) {
   
       return true;
   };
+//   TC:O(n)
+//   SC:O(1)
+
+  ```
 10. Isomorphic Strings[🔗]()
 
 ```js
