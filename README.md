@@ -1334,20 +1334,29 @@ var isAnagram = function(s, t) {
 ```js
 
   var isIsomorphic = function(s, t) {
-      let mapSToT = {};
-      let mapTToS = {};
-  
-      for (let i = 0; i < s.length; i++) {
-          if (!mapSToT[s[i]] && !mapTToS[t[i]]) {
-              mapSToT[s[i]] = t[i];
-              mapTToS[t[i]] = s[i];
-          } else if (mapTToS[t[i]] !== s[i] || mapSToT[s[i]] !== t[i]) {
-              return false;
-          }
-      }
-  
-      return true;
-  };
+    if(s.length != t.length) return false
+    let mapStoT = {};
+    let mapTtoS = {};
+
+
+    for(let i =0;i<s.length;i++){
+        if(!mapStoT[s[i]] && !mapTtoS[t[i]]){
+            mapStoT[s[i]] = t[i];
+            mapTtoS[t[i]] = s[i];
+        }
+        else if(mapTtoS[t[i]] != s[i]){
+            return false
+        }
+        else if(mapStoT[s[i]] != t[i]){
+            return false
+        }
+       
+    }
+    return true
+
+};
+// TC:O(n)
+// SC:O(1)
 ```
 13. [🔗]()
 13. [🔗]()
