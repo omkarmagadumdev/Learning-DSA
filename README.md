@@ -1329,7 +1329,7 @@ var isAnagram = function(s, t) {
 //   SC:O(1)
 
   ```
-10. Isomorphic Strings[🔗]()
+10. Isomorphic Strings[🔗](https://leetcode.com/problems/isomorphic-strings/)
 
 ```js
 
@@ -1358,5 +1358,24 @@ var isAnagram = function(s, t) {
 // TC:O(n)
 // SC:O(1)
 ```
-13. [🔗]()
+11. Group Anagrams - Approach 1 - Sorted Key[🔗]()
+
+
+```js
+ var groupAnagrams = function(strs) {
+      let map = {};
+  
+      for (let i = 0; i < strs.length; i++) {
+          let sortedStr = strs[i].split("").sort().join(""); 
+  
+          if (!map[sortedStr]) {
+              map[sortedStr] = [strs[i]];
+          } else {
+              map[sortedStr].push(strs[i]);
+          }
+      }
+  
+      return Object.values(map);
+  };
+```
 13. [🔗]()
