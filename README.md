@@ -1379,3 +1379,152 @@ var isAnagram = function(s, t) {
   };
 ```
 13. [🔗]()
+
+
+
+
+
+ # Stack & Queues
+
+1. Implement Stack using Two Queues[🔗](https://leetcode.com/problems/implement-stack-using-queues/)
+```js
+var MyStack = function() {
+    this.q1 = [];
+    this.q2 = [];
+
+};
+
+/** 
+ * @param {number} x
+ * @return {void}
+ */
+MyStack.prototype.push = function(x) {
+    this.q1.push(x);
+
+};
+
+/**
+ * @return {number}
+ */
+MyStack.prototype.pop = function() {
+    let n = this.q1.length;
+    for(let i =0;i<n-1;i++){
+        // let forntEle = this.q1.shift();
+        // this.q2.push(frontEle);
+        this.q2.push(this.q1.shift());
+
+    }
+    let ans = this.q1.shift();
+
+
+    let temp = this.q1;
+    this.q1 = this.q2;
+    this.q2 = temp;
+    return ans
+};
+
+/**
+ * @return {number}
+ */
+MyStack.prototype.top = function() {
+  let n = this.q1.length;
+  for(let i =0;i<n-1;i++){
+    this.q2.push(this.q1.shift())
+  }  
+
+  let front = this.q1[0];
+  this.q2.push(this.q1.shift(front))
+
+  let temp = this.q1;
+  this.q1 = this.q2;
+  this.q2 = temp;
+  return front
+};
+
+/**
+ * @return {boolean}
+ */
+MyStack.prototype.empty = function() {
+return this.q1.length == 0
+};
+```
+```js
+var MyStack = function() {
+    this.q1 = [];
+    this.q2 = [];
+
+};
+
+/** 
+ * @param {number} x
+ * @return {void}
+ */
+MyStack.prototype.push = function(x) {
+    this.q1.push(x);
+
+};
+
+/**
+ * @return {number}
+ */
+MyStack.prototype.pop = function() {
+    let n = this.q1.length;
+    for(let i =0;i<n-1;i++){
+        // let forntEle = this.q1.shift();
+        // this.q2.push(frontEle);
+        this.q1.push(this.q1.shift());
+
+    }
+    let ans = this.q1.shift();
+
+
+ 
+    return ans
+};
+
+/**
+ * @return {number}
+ */
+MyStack.prototype.top = function() {
+  let n = this.q1.length;
+  for(let i =0;i<n-1;i++){
+    this.q1.push(this.q1.shift())
+  }  
+
+  let front = this.q1[0];
+  this.q1.push(this.q1.shift(front))
+
+
+  return front
+};
+
+/**
+ * @return {boolean}
+ */
+MyStack.prototype.empty = function() {
+return this.q1.length == 0
+};
+```
+
+2. [🔗]()
+```js
+
+```
+
+3. [🔗]()
+```js
+
+```
+4. [🔗]()
+```js
+
+```
+5. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+
