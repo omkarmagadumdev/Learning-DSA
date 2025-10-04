@@ -1224,7 +1224,7 @@ for(let i =0;i<mid;i++){
 };
 
 ```
-7.  Valid Palindrome - Approach 1 - Extra Space[🔗]()
+7.  Valid Palindrome - Approach 1 - Extra Space[🔗](https://leetcode.com/problems/valid-palindrome/description/)
 
 ```js
 var isPalindrome = function(s) {
