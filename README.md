@@ -1274,7 +1274,30 @@ s = s.toLowerCase()
     return true
 };
 ```
-8. Largest Odd Number in a String[🔗](https://leetcode.com/problems/largest-odd-number-in-string/)
+8. Largest Odd Number in a String [🔗](https://leetcode.com/problems/largest-odd-number-in-string/)
+```js
+var largestOddNumber = function (num) {
+
+    let n = num.length - 1;
+
+    while (n >= 0) {
+        if (Number(num[n]) % 2 == 1) {
+            return num.substring(0, n + 1)
+
+        }
+        n--
+
+
+    }
+
+    return ""
+
+};
+// TC:O(n)
+// SC:O(1)
+```
+
+9. Longest Common Prefix[🔗](https://leetcode.com/problems/longest-common-prefix/description/)
 
 ```js
 var longestCommonPrefix = function(strs) {
@@ -1294,7 +1317,7 @@ var longestCommonPrefix = function(strs) {
 // SC:O(1)
 
 ```
-9. Valid Anagram[🔗](https://leetcode.com/problems/valid-anagram/)
+10. Valid Anagram[🔗](https://leetcode.com/problems/valid-anagram/)
 ```js
 var isAnagram = function(s, t) {
     return  (s.split("").sort().join("")) == (t.split("").sort().join("")) 
@@ -1329,7 +1352,7 @@ var isAnagram = function(s, t) {
 //   SC:O(1)
 
   ```
-10. Isomorphic Strings[🔗](https://leetcode.com/problems/isomorphic-strings/)
+11. Isomorphic Strings[🔗](https://leetcode.com/problems/isomorphic-strings/)
 
 ```js
 
@@ -1358,7 +1381,7 @@ var isAnagram = function(s, t) {
 // TC:O(n)
 // SC:O(1)
 ```
-11. Group Anagrams - Approach 1 - Sorted Key[🔗]()
+12. Group Anagrams - Approach 1 - Sorted Key[🔗]()
 
 
 ```js
