@@ -1628,9 +1628,48 @@ var isValid = function(s) {
     
 };
 ```
-4. [🔗]()
+4. Min Stack[🔗](https://leetcode.com/problems/min-stack/)
 ```js
 
+var MinStack = function () {
+    this.stack = []
+};
+
+/** 
+ * @param {number} val
+ * @return {void}
+ */
+MinStack.prototype.push = function (val) {
+
+    if (this.stack.length == 0) {
+        this.stack.push([val, val])
+    }
+    else {
+        let minval = Math.min(val,this.stack[this.stack.length-1][1])
+        this.stack.push([val,minval])
+    }
+};
+
+/**
+ * @return {void}
+ */
+MinStack.prototype.pop = function () {
+    this.stack.pop()
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.top = function () {
+    return this.stack[this.stack.length-1][0]
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.getMin = function () {
+    return this.stack[this.stack.length-1][1]
+};
 ```
 5. [🔗]()
 ```js
@@ -1641,3 +1680,37 @@ var isValid = function(s) {
 
 ```
 
+7. [🔗]()
+```js
+
+```
+
+8. [🔗]()
+```js
+
+```
+
+9. [🔗]()
+```js
+
+```
+
+10. [🔗]()
+```js
+
+```
+
+11. [🔗]()
+```js
+
+```
+
+12. [🔗]()
+```js
+
+```
+
+13. [🔗]()
+```js
+
+```
