@@ -1381,28 +1381,28 @@ var isAnagram = function(s, t) {
 // TC:O(n)
 // SC:O(1)
 ```
-12. Group Anagrams - Approach 1 - Sorted Key[🔗]()
-
-
+12. Group Anagrams - Approach 1 - Sorted Key[🔗](https://leetcode.com/problems/group-anagrams/description/)
 ```js
- var groupAnagrams = function(strs) {
-      let map = {};
-  
-      for (let i = 0; i < strs.length; i++) {
-          let sortedStr = strs[i].split("").sort().join(""); 
-  
-          if (!map[sortedStr]) {
-              map[sortedStr] = [strs[i]];
-          } else {
-              map[sortedStr].push(strs[i]);
-          }
-      }
-  
-      return Object.values(map);
-  };
+var groupAnagrams = function(strs) {    
+    let map = {};
+    for(let i =0;i<strs.length;i++){
+        let sortted = strs[i].split("").sort().join("");
+        if(!map[sortted]){
+            map[sortted] = [strs[i]]
+        }
+        else{
+            map[sortted].push(strs[i])
+        }
+    }
+    return [...Object.values(map)]
+};
+// TC:O(nx mlogm)
+// SC:O(n x m)
 ```
-13. [🔗]()
+```js
 
+
+```
 
 
 
