@@ -1401,7 +1401,30 @@ var groupAnagrams = function(strs) {
 ```
 ```js
 
-
+var groupAnagrams = function(strs) {
+    let map ={};
+    for(let i =0;i<strs.length;i++){
+        let freqarr = Array(26).fill(0)
+            let s = strs[i];
+        for(let j =0;j<s.length;j++){
+            let index = s[j].charCodeAt() - 'a'.charCodeAt();
+            freqarr[index]++
+        }
+        let key = ""
+        for(k = 0;k<26;k++){
+                key = key + String.fromCharCode(k) + freqarr[k]
+        }
+        if(!map[key]){
+            map[key] = [s]; 
+        }
+        else{
+            map[key].push(s)
+        }
+    }
+    return [...Object.values(map)]
+};
+// TC:O(n x m)
+// SC:O(n x m)
 ```
 
 
@@ -1671,9 +1694,31 @@ MinStack.prototype.getMin = function () {
     return this.stack[this.stack.length-1][1]
 };
 ```
-5. [🔗]()
+5. Remove Outermost Parentheses - Using Stack[🔗](https://leetcode.com/problems/remove-outermost-parentheses/description/)
 ```js
-
+var removeOuterParentheses = function(s) {
+    let stack = []
+        let ans = ""
+    for(let i =0;i<s.length;i++){
+        if(s[i] == "("){
+            stack.push(s[i])
+            if(stack.length >1){
+            ans = ans + s[i]
+        }
+     
+        }
+        else{
+            
+        if(stack.length >1){
+            ans = ans + s[i]
+        }
+            
+            stack.pop()
+        }
+        
+    }
+    return ans
+};
 ```
 6. [🔗]()
 ```js
