@@ -1771,7 +1771,8 @@ var evalRPN = function (tokens) {
 
 
 7. Next Greater Element[🔗](https://leetcode.com/problems/next-greater-element-i/)
-```
+
+```js
 var nextGreaterElement = function (nums1, arr) {
     let ngemap = {}
     let stack = [];
@@ -1813,14 +1814,65 @@ var nextGreaterElement = function (nums1, arr) {
 
 ```
 
-8. [🔗]()
+8. Daily Temperatures[🔗](https://leetcode.com/problems/daily-temperatures/description/)
 ```js
+var dailyTemperatures = function(arr) {
+    
+    let stack = [];
 
+
+    let n = arr.length;
+    let ans = Array(n).fill(0);
+
+
+    stack.push(n-1);
+
+    for(let i = n-2;i>=0;i--){
+        while(stack.length){
+            let top = stack[stack.length-1]
+          
+            if(arr[i] >= arr[top]){
+                stack.pop()
+            }
+            else{
+                ans[i] = top - i;
+                break;
+            }
+        }
+        stack.push(i)
+    }
+    return ans
+
+};
 ```
 
-9. [🔗]()
+9. Next Greater Element - II [🔗](https://leetcode.com/problems/next-greater-element-ii/)
 ```js
+var nextGreaterElements = function(nums) {
+    let arr = [...nums, ...nums];
 
+    let n = arr.length;
+
+    let stack = [];
+    let ans = Array(n).fill(-1);
+    stack.push(arr[n-1]);
+    for(let i = n-2;i>=0;i--){
+        while(stack.length){
+            let top = stack[stack.length-1]
+            if(arr[i]  <  top){
+                
+                ans[i] = top;
+                break;
+            }
+            else{
+                stack.pop()
+            }
+        }
+      
+        stack.push(arr[i])
+    }
+    return ans.slice(0,n/2)
+};
 ```
 
 10. [🔗]()
