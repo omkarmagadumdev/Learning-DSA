@@ -1923,9 +1923,30 @@ var orangesRotting = function(grid) {
 
 ```
 
-11. [🔗]()
-```js
 
+# Binary Search;
+
+
+
+1. Square Root of X[🔗](https://leetcode.com/problems/sqrtx/)
+```js
+var mySqrt = function(x) {
+      if (x < 2) return x;
+      let l = 2;
+      let r = Math.floor(x / 2);
+      while (l <= r) {
+          let m = Math.floor((l + r) / 2);
+          if (x === m * m) {
+              return m;
+          } else if (x < m * m) {
+              r = m - 1;
+          } else {
+              l = m + 1;
+          }
+      }
+      return r;
+  };
+      
 ```
 
 12. [🔗]()
