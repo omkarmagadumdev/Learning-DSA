@@ -1877,50 +1877,71 @@ var nextGreaterElements = function(nums) {
 
 10. [🔗]()
 ```js
-var orangesRotting = function(grid) {
-    let m = grid.length;
-    let n = grid[0].length;
-    let queue = [];
-    for (let i = 0; i < m; i++) {
-        for (let j = 0; j < n; j++) {
-            if (grid[i][j] === 2) {
-                queue.push([i, j, 0]);
-            }
-        }
-    }
-    let maxMinutes = 0;
-    while (queue.length) {
-        let [x, y, level] = queue.shift();
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+var orangesRotting = function (grid) {
 
-        if (x > 0 && grid[x - 1][y] === 1) {
-            grid[x - 1][y] = 2;
-            queue.push([x - 1, y, level + 1]);
-        }
-        if (x < m - 1 && grid[x + 1][y] === 1) {
-            grid[x + 1][y] = 2;
-            queue.push([x + 1, y, level + 1]);
-        }
-        if (y < n - 1 && grid[x][y + 1] === 1) {
-            grid[x][y + 1] = 2;
-            queue.push([x, y + 1, level + 1]);
-        }
-        if (y > 0 && grid[x][y - 1] === 1) {
-            grid[x][y - 1] = 2;
-            queue.push([x, y - 1, level + 1]);
-        }
-        maxMinutes = Math.max(level, maxMinutes);
-    }
+    let m = grid.length;
+    let n = grid[0].length
+
+
+    // first add all the rotten oranges in the queue
+    let queue = []
     for (let i = 0; i < m; i++) {
         for (let j = 0; j < n; j++) {
-            if (grid[i][j] === 1) {
-                return -1;
+            if (grid[i][j] == 2) {
+                queue.push([i, j, 0])
             }
         }
     }
-    return maxMinutes;
+
+
+
+    // mark adj nodes as a rotten and push into the queue
+    let maxmin = 0;
+
+    while (queue.length) {
+        let [x, y,level] = queue.shift()
+        if (x > 0 && grid[x - 1][y] == 1) {
+            grid[x - 1][y] = 2;
+            queue.push([x - 1, y, level + 1])
+        }
+        if (x < m - 1 && grid[x + 1][y] == 1) {
+            grid[x + 1][y] = 2;
+            queue.push([x + 1, y, level + 1])
+        }
+        if (y < n - 1 && grid[x][y + 1] == 1) {
+            grid[x][y + 1] = 2;
+            queue.push([x, y+1, level + 1])
+        }
+        if (y > 0 && grid[x][y - 1] == 1) {
+            grid[x][y - 1] = 2;
+            queue.push([x, y - 1, level + 1])
+        }
+        maxmin = Math.max(level, maxmin)
+
+    }
+
+
+
+    // finally run over each element and check if any fresh is remaining
+
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (grid[i][j] == 1) {
+                return -1
+            }
+        }
+    }
+
+
+    return maxmin
 };
 
-
+// TC:O(m x n)
+// SC:O(m x n)
 ```
 
 
@@ -1949,9 +1970,23 @@ var mySqrt = function(x) {
       
 ```
 
-12. [🔗]()
+2. Guess Higher or Lower[🔗]()
 ```js
-
+var guessNumber = function(n) {
+    let l = 1;
+    let r = n;
+    while (l <= r) {
+        let m = l + Math.floor((r - l) / 2);
+        let res = guess(m);
+        if (res === 0) {
+            return m;
+        } else if (res < 0) {
+            r = m - 1;
+        } else {
+            l = m + 1;
+        }
+    }
+}; 
 ```
 
 13. [🔗]()
