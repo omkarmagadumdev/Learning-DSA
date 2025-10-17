@@ -415,7 +415,7 @@ function merge(left,right){
 # Linked List 
 
 
-## Introduction to Linked List [🔗](https://namastedev.com/learn/namaste-dsa/introduction-to-linked-list-dsa-notes)
+ Introduction to Linked List [🔗](https://namastedev.com/learn/namaste-dsa/introduction-to-linked-list-dsa-notes)
 
 1.  Design Linked List [🔗](https://leetcode.com/problems/design-linked-list/description/)
 
@@ -1970,7 +1970,7 @@ var mySqrt = function(x) {
       
 ```
 
-2. Guess Higher or Lower[🔗]()
+2. Guess Higher or Lower[🔗](https://leetcode.com/problems/guess-number-higher-or-lower/)
 ```js
 var guessNumber = function(n) {
     let l = 1;
@@ -2018,27 +2018,65 @@ var search = function(arr, target) {
 };
       
 ```
-3. [🔗]()
+4. Search in Rotated Sorted Array[🔗](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+```js
+var solution = function(isBadVersion) {
+    return function(n) {
+        let l = 1;
+        let r = n;
+        while (l < r) {
+            let m = l + Math.floor((r - l) / 2);
+            if (!isBadVersion(m)) {
+                l = m + 1;
+            } else {
+                r = m;
+            }
+        }
+        return r;
+    };
+};
+```
+5. [🔗]()
 ```js
 
 ```
-3. [🔗]()
+6. [🔗]()
 ```js
 
 ```
-3. [🔗]()
+7. [🔗]()
 ```js
 
 ```
-3. [🔗]()
+8. [🔗]()
 ```js
 
 ```
-3. [🔗]()
+9. [🔗]()
 ```js
 
 ```
-3. [🔗]()
+4. [🔗]()
+```js
+
+```
+5. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+7. [🔗]()
+```js
+
+```
+8. [🔗]()
+```js
+
+```
+9. [🔗]()
 ```js
 
 ```
