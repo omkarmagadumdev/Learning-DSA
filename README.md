@@ -2036,33 +2036,36 @@ var solution = function(isBadVersion) {
     };
 };
 ```
-5. [🔗]()
+5. First Bad Version[🔗](https://leetcode.com/problems/first-bad-version/description/)
 ```js
+var solution = function(isBadVersion) {
+    /**
+     * @param {integer} n Total versions
+     * @return {integer} The first bad version
+     */
+    return function(n) {
+        let l = 0;
+        let r = n;
 
-var findMin = function(a) {
-    let l = 0;
-    let r = a.length - 1;
+        while(l < r){
+            let middle = l + Math.floor((r-l)/2);
 
-    while (l <= r) {
-        if (a[l] <= a[r]) {
-            return a[l];
+            if(isBadVersion(middle)){
+                r = middle
+            }
+            else{
+                l = middle + 1
+            }
+        
         }
+    return l
+    };
 
-        let m = l + Math.floor((r - l) / 2);
-        if (a[m] < a[m - 1]) {
-            return a[m];
-        }
-
-        if (a[l] > a[m]) {
-            r = m - 1;
-        } else {
-            l = m + 1;
-        }
-    }
 };
+
       
 ```
-6. [🔗]()
+6. Find Peak Element[🔗](https://leetcode.com/problems/find-peak-element/description/)
 ```js
 
 var findPeakElement = function(arr) {
@@ -2080,9 +2083,38 @@ var findPeakElement = function(arr) {
 };
       
 ```
-7. [🔗]()
+7. Find Minimum in Rotated Sorted Array[🔗](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 ```js
+var findMin = function (nums) {
+    let l = 0;
+    let r = nums.length - 1;
 
+   
+    while (l <= r) {
+         if (nums[l] <= nums[r]) {
+                return nums[l]
+            }
+        let middle = l + Math.floor((r - l) / 2);
+
+        if (nums[middle] < nums[middle - 1]) {
+            return nums[middle]
+        }
+
+        if (nums[l] <= nums[middle]) {
+           
+                l = middle +1
+        }
+
+        else {
+            
+            r = middle - 1
+        }
+
+
+    }
+
+
+};
 ```
 8. [🔗]()
 ```js
