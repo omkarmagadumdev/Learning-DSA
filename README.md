@@ -2118,11 +2118,48 @@ var findMin = function (nums) {
 ```
 8. [🔗]()
 ```js
+var singleNonDuplicate = function(arr) {
+    let l = 0, r = arr.length - 1;
+    
+    while (l < r) {
+        let m = l + Math.floor((r - l) / 2);
+
+        // Make sure m is even
+        if (m % 2 === 1) m--;
+
+        if (arr[m] === arr[m + 1]) {
+            // Single element is on the right
+            l = m + 2;
+        } else {
+            // Single element is on the left (or m itself)
+            r = m;
+        }
+    }
+
+    return arr[l];
+};
 
 ```
 9. [🔗]()
 ```js
-
+var findClosestElements = function(arr, k, x) {
+    let l = 0;
+    let r = arr.length - k;
+    while (l < r) {
+        let m = l + Math.floor((r - l) / 2);
+        if ((arr[m + k] - x) < (x - arr[m])) {
+            l = m + 1;
+        } else {
+            r = m;
+        }
+    }
+    let ans = [];
+    for(let i = l; i < l + k; i++) {
+        ans.push(arr[i]);
+    }
+    return ans;
+};
+      
 ```
 4. [🔗]()
 ```js
