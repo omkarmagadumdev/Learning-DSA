@@ -2212,9 +2212,49 @@ var peakIndexInMountainArray = function(arr) {
     return r;
 };
 ```
-6. [🔗]()
+12. [🔗]()
 ```js
+var singleNonDuplicate = function (nums) {
+    let l = 0;
+    let r = nums.length - 1;
+    while (l <= r) {
+        let left = 0
+        let right = 0
+        let m = l + Math.floor((r - l) / 2);
 
+
+        if (nums[m - 1] == nums[m]) {
+            left = m - 1 - l;
+            if (left % 2 == 1) {
+                r = m - 2
+            }
+            else {
+                l = m + 1
+            }
+
+
+
+        }
+        else if (nums[m + 1] == nums[m]){
+            left = m - l 
+            if (left % 2 == 1) {
+                r = m - 1
+            }
+            else {
+              l = m +2
+            }
+        }
+        else{
+            return nums[m]
+            break;
+            
+        }
+    }
+
+
+
+
+};
 ```
 7. [🔗]()
 ```js
