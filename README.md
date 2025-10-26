@@ -2314,5 +2314,37 @@ var twoSum = function(nums, target) {
 ```
 9. [🔗]()
 ```js
+var twoSum = function(numbers, target) {
+    let i = 0;
+    let j = numbers.length - 1;
+    while( i < j){
+        let sum = numbers[i] + numbers[j];
+        if(sum > target) {
+            --j;
+        } else if(sum < target) {
+            ++i;
+        } else {
+            return [i+1, j+1]
+        }
+    }
+};
+
+```
+
+9. [🔗]()
+```js
+
+```
+
+9. [🔗]()
+```js
+
+```
+9. [🔗]()
+```js
+
+```
+9. [🔗]()
+```js
 
 ```
