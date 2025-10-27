@@ -2116,7 +2116,7 @@ var findMin = function (nums) {
 
 };
 ```
-8. [🔗]()
+8. Find First & Last Position in Sorted Array - Approach 2[🔗](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/)
 ```js
 var singleNonDuplicate = function(arr) {
     let l = 0, r = arr.length - 1;
@@ -2140,7 +2140,7 @@ var singleNonDuplicate = function(arr) {
 };
 
 ```
-9. [🔗]()
+9. Find Peak in a Mountain Array[🔗](https://leetcode.com/problems/peak-index-in-a-mountain-array/description/)
 ```js
 var findClosestElements = function(arr, k, x) {
     let l = 0;
@@ -2161,7 +2161,7 @@ var findClosestElements = function(arr, k, x) {
 };
       
 ```
-10. [🔗]()
+10. Find First & Last Position in Sorted Array - Approach 2[🔗](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/)
 ```js
 var searchRange = function (nums, target) {
     let l = 0;
@@ -2195,7 +2195,7 @@ var searchRange = function (nums, target) {
 
     return ans
 ```
-11. [🔗]()
+11. Find Peak in a Mountain Array[🔗](https://leetcode.com/problems/peak-index-in-a-mountain-array/description/)
 
 ```js
 var peakIndexInMountainArray = function(arr) {
@@ -2212,7 +2212,7 @@ var peakIndexInMountainArray = function(arr) {
     return r;
 };
 ```
-12. [🔗]()
+12. Single Element in a Sorted Array[🔗](https://leetcode.com/problems/single-element-in-a-sorted-array/description/)
 ```js
 var singleNonDuplicate = function (nums) {
     let l = 0;
@@ -2256,7 +2256,7 @@ var singleNonDuplicate = function (nums) {
 
 };
 ```
-13. [🔗]()
+13. Find k Closest Elements[🔗]()
 ```js
 var findClosestElements = function(arr, k, x) {
     let l = 0;
@@ -2277,12 +2277,10 @@ var findClosestElements = function(arr, k, x) {
 };
       
 ```
-9. [🔗]()
-```js
-```
+
 
 # Two pointers and Sliding window
-1. [🔗]()
+1. Two Sum[🔗](https://leetcode.com/problems/two-sum/description/)
 ```js
 var twoSum = function(nums, target) {
     let n = nums.length;
@@ -2312,7 +2310,7 @@ var twoSum = function(nums, target) {
 }      
 
 ```
-9. [🔗]()
+2. Two Sum II - Input Array Is Sorted[🔗](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)
 ```js
 var twoSum = function(numbers, target) {
     let i = 0;
@@ -2331,20 +2329,35 @@ var twoSum = function(numbers, target) {
 
 ```
 
-9. [🔗]()
+3. Is Subsequence[🔗](https://leetcode.com/problems/is-subsequence/description/)
+```js
+var isSubsequence = function (s, t) {
+    let i = 0;
+    let j = 0;
+
+    while (j < t.length) {
+
+
+        if (s[i] === t[j]) {
+            i++
+        }
+        j++
+
+    }
+
+    return i === s.length
+};
+```
+
+4. [🔗]()
 ```js
 
 ```
-
-9. [🔗]()
+5. [🔗]()
 ```js
 
 ```
-9. [🔗]()
-```js
-
-```
-9. [🔗]()
+6. [🔗]()
 ```js
 
 ```
