@@ -1,4 +1,4 @@
-# Namaste DSA
+#🙏 DSA
 
 # Arrays - Easy/Medium
 
@@ -2349,9 +2349,32 @@ var isSubsequence = function (s, t) {
 };
 ```
 
-4. [🔗]()
+4. Find Index of First Occurrence in String[🔗](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/)
 ```js
+var strStr = function(haystack, needle) {
+    
+    
+    let n = haystack.length;
+    let m = needle.length
 
+    for(let i = 0;i <= n - m;i++){
+        let j = 0
+        for(j = 0;j < m;j++){
+            if(haystack[i + j] !== needle[j] ){
+                break;
+            }
+            
+        }
+
+        if(j === m){
+            return i 
+        }
+
+    }
+
+    return -1
+    
+};
 ```
 5. [🔗]()
 ```js
