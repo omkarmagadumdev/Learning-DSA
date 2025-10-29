@@ -2376,6 +2376,66 @@ var strStr = function(haystack, needle) {
     
 };
 ```
+```js
+//KMP
+
+var strStr = function(hey, ni) {
+    let m = ni.length;
+    let n = hey.length;
+    
+    // find the lps of needle
+    let i = 0;
+    let j = 1;
+    let lps = [0]
+    while(j < m){
+        if(ni[i] === ni[j]){
+            lps[j] = i + 1
+            i++ 
+            j++
+        }
+        else{
+            if( i==0 ){
+                lps[j] =0
+                j++
+            }
+            else{
+                i = lps[i-1]
+            }
+        }
+    }
+
+    // now find the string 
+
+     i = 0;
+    j = 0;
+
+    while(i < n){
+        if(hey[i] === ni[j]){
+            i++;
+            j++
+        }
+        else{
+            if(j === 0){
+                i++
+            }
+            else{
+                j = lps[j-1]
+            }
+        }
+
+        if(j === m){
+            return i-m
+        }
+    }
+
+    return -1
+};
+Time Complexity:
+Time Complexity = O(n)
+
+Space Complexity:
+Space Complexity = O(m)
+```
 5. [🔗]()
 ```js
 
