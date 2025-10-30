@@ -1,4 +1,4 @@
-#🙏 DSA
+# 🙏 DSA
 
 # Arrays - Easy/Medium
 
@@ -2438,7 +2438,48 @@ Space Complexity = O(m)
 ```
 5. [🔗]()
 ```js
+var getIntersectionNode = function(headA, headB) {
+   let pA = headA;
+    let n = 0
+    let length = 0;
+    while(pA){
+        pA = pA.next;
+        n++
+    }
+    let pB = headB
+    let  m = 0
+    while(pB){
+        pB = pB.next;
+        m++
+    }
+    
+    let diff = Math.abs(n-m);
 
+    if(n > m){
+        let temp = headA;
+        headA = headB;
+        headB = temp 
+    }
+for(let i =0;i<diff;i++){
+headB = headB.next
+
+}
+    pA = headA;
+    pB = headB;
+
+    while(pA != pB){
+        pA = pA.next
+        pB = pB.next
+    }
+
+return pA
+};
+ 
+Time Complexity:
+Time Complexity = O(n + m)
+
+Space Complexity:
+Space Complexity = O(1)
 ```
 6. [🔗]()
 ```js
