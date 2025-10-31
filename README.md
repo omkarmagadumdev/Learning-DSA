@@ -2481,6 +2481,105 @@ Time Complexity = O(n + m)
 Space Complexity:
 Space Complexity = O(1)
 ```
+
+
+6. [🔗]()
+```js
+var maxArea = function(arr) {
+    let i =0;
+    let j = arr.length-1;
+    let maxwater = 0
+    while(i < j){
+            let area = Math.min(arr[i],arr[j])*(j-i);
+            maxwater = Math.max(maxwater,area);
+
+            if(arr[i] > arr[j] ){
+                j--
+            }
+            else{
+                i++
+            }
+    }
+
+    return maxwater
+};
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
+6. [🔗]()
+```js
+
+```
 6. [🔗]()
 ```js
 
