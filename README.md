@@ -2504,13 +2504,62 @@ var maxArea = function(arr) {
     return maxwater
 };
 ```
-6. [🔗]()
+7. [🔗]()
 ```js
-
+var threeSum = function(nums) {
+    nums.sort((a, b) => a - b);
+    let ans = [];
+    for (let i = 0; i < nums.length; i++) {
+        if (i === 0 || nums[i] !== nums[i - 1]) {
+            twoSum(nums, i, ans);
+        }
+    }
+    return ans;
+};
+var twoSum = function(arr, x, ans) {
+    let i = x + 1;
+    let j = arr.length - 1;
+    while (i < j) {
+        let sum = arr[i] + arr[j] + arr[x];
+        if (sum > 0) {
+            j--;
+        } else if (sum < 0) {
+            i++;
+        } else {
+            ans.push([arr[i], arr[j], arr[x]]);
+            i++;
+            j--;
+            // Skip duplicates for the second element
+            while (i < j && arr[i] === arr[i - 1]) {
+                i++;
+            }
+        }
+    }
+};
+     
+     
 ```
-6. [🔗]()
+8. [🔗]()
 ```js
-
+var trap = function(arr) {
+    let n = arr.length;
+    let maxL = [];
+    maxL[0] = arr[0];
+    for (let i = 1; i < n; i++) {
+        maxL[i] = Math.max(maxL[i - 1], arr[i]);
+    }
+    let maxR = [];
+    maxR[n - 1] = arr[n - 1];
+    for (let i = n - 2; i >= 0; i--) {
+        maxR[i] = Math.max(arr[i], maxR[i + 1]);
+    }
+    let ans = 0;
+    for (let i = 0; i < n; i++) {
+        let waterTrapped = Math.min(maxL[i], maxR[i]) - arr[i];
+        ans += Math.max(waterTrapped, 0);  // Avoid negative values
+    }
+    return ans;
+};
 ```
 6. [🔗]()
 ```js
