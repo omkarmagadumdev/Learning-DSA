@@ -77,17 +77,52 @@
 
 //smartly garbage collected 
 
-function Outer(){
-    var a = 0, b= 10;
-    return function inner(){
-        console.log(a)
-    }
+// function Outer(){
+//     var a = 0, b= 10;
+//     return function inner(){
+//         console.log(a)
+//     }
+// }
+
+// var z = Outer();
+// z();
+
+// function statement aka function declaration
+
+// a();
+
+// function a(){
+//     console.log("FS ");
+    
+// }
+
+
+
+// // function expression
+// var b = function(){
+//     console.log("FE");
+    
+// }
+// b();
+
+
+
+
+
+
+// Anonymous function 
+
+
+// Named function expression
+// difference b/w parameters and argument
+// first class function 
+// arrow function 
+
+function attach(){
+    let count = 0
+document.getElementById("clickme")
+.addEventListener("click",function xyz(){
+        console.log("buttone clicked",count++)
+})
 }
-
-var z = Outer();
-z();
-
-
-
-
-
+attach();
