@@ -118,11 +118,44 @@
 // first class function 
 // arrow function 
 
-function attach(){
-    let count = 0
-document.getElementById("clickme")
-.addEventListener("click",function xyz(){
-        console.log("buttone clicked",count++)
-})
+// function attach(){
+//     let count = 0
+// document.getElementById("clickme")
+// .addEventListener("click",function xyz(){
+//         console.log("buttone clicked",count++)
+// })
+// }
+// attach();
+
+let radius = [2, 4, 1, 4];
+
+const area = function (r) {
+  return Math.PI * r * r;
 }
-attach();
+
+const cal = function (radius, logic) {
+  const output = [];
+  for (let i = 0; i < radius.length; i++) {
+    output.push(logic(radius[i]));
+  }
+  return output;
+}
+
+console.log(cal(radius, area));
+
+
+// console.log(area(radius));
+
+
+// const cir = function (radius){
+//         const output = [];
+//         for(let i = 0;i<radius.length;i++){
+//             output.push(2 * Math.PI *radius[i])
+//         }
+
+//         return output 
+
+// }
+
+
+// console.log(cir(radius));
