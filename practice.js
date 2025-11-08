@@ -118,44 +118,102 @@
 // first class function 
 // arrow function 
 
-// function attach(){
-//     let count = 0
-// document.getElementById("clickme")
-// .addEventListener("click",function xyz(){
-//         console.log("buttone clicked",count++)
-// })
+// function y(cb){
+//   cb()
 // }
-// attach();
 
-let radius = [2, 4, 1, 4];
-
-const area = function (r) {
-  return Math.PI * r * r;
-}
-
-const cal = function (radius, logic) {
-  const output = [];
-  for (let i = 0; i < radius.length; i++) {
-    output.push(logic(radius[i]));
-  }
-  return output;
-}
-
-console.log(cal(radius, area));
+// function x(){
+//   console.log(" i am callback");
+// }
+// hello(hi);
 
 
-// console.log(area(radius));
+// function hello(call){
 
+//     console.log("hello");
+//     call();
 
-// const cir = function (radius){
-//         const output = [];
-//         for(let i = 0;i<radius.length;i++){
-//             output.push(2 * Math.PI *radius[i])
-//         }
-
-//         return output 
+  
 
 // }
 
+// function  goodbye(){
+//   console.log("goodbye")
+// }
 
-// console.log(cir(radius));
+// function leave(){
+//   console.log("leave")
+// }
+
+
+// function hi(){
+//   console.log("hi")
+// }
+
+
+// sum(mul,4,3)
+
+// function sum(callback,x,y){
+    
+//     callback()
+// }
+
+// function displayconsole(result){
+//   console.log(result)
+// }
+
+// function mul(){
+//     let result = x * y
+//     console.log(result)
+// }
+
+
+// const arr  = [5,2,3,4,5];
+
+
+// function double(x){
+//   return  x*2
+// }
+
+// function triple(x){
+//     return x*3
+// }
+
+
+// console.log(arr.map(triple))
+const arr = [
+  {age: 5 } ,
+  {age: 5 } ,
+  {age: 5 } ,
+  {age: 5 } ,
+]
+
+// function iseven(x){
+//   return  x% 2 == 0
+// }
+// console.log(arr.filter(iseven))
+
+
+// const output = arr.reduce(function (acc,curr){
+//   if(curr > acc){
+//     acc = curr
+//   }
+//   return acc
+// },0)
+
+// console.log(output)
+
+
+const output = arr.reduce(function (acc,cur){
+      if(acc[cur.age]){
+        acc[cur.age]++
+      }
+      else{
+        acc[cur.age] =1 
+      }
+
+      return acc;
+
+},{})
+
+console.log(output);
