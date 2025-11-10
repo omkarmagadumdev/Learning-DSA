@@ -305,30 +305,74 @@ const books = [
 
 // console.log(store);
 
-function fun(username = "sam"){
-  if(!username){
-    // console.log("please enter");
+// function fun(username = "sam"){
+//   if(!username){
+//     // console.log("please enter");
     
-  }
+//   }
 
-  return `${username} is just logged in`;
+//   return `${username} is just logged in`;
 
 
 
+// }
+
+// // console.log(fun("omkar"));
+
+// function calculateCart(val1,val2,...nums1){
+//   console.log(`this is v1:${val1}`)
+//   console.log(`this is v2:${val2}`)
+//   // console.log("this is v2:"`${val2}`)
+//   // // console.log(val2);
+
+
+//   return nums1
+// }
+
+// console.log(calculateCart(24,2,1,6));
+
+
+// (()=>{
+//   console.log("db connected ");
+  
+// })();
+
+
+
+
+
+
+// ((name) => { 
+//   console.log(`db two ${name}`)
+// })("om")
+
+
+
+
+
+
+// fun();
+
+
+
+const fun = (() =>{
+  console.log("envoked")
+
+})();
+
+
+(function fun2(){
+  console.log("fun2 envoked")
+})()
+
+
+let val1 = 1
+let val2 = 2
+function fun(num1,num2){
+ let total = num1 + num2 
+  return total 
 }
 
-// console.log(fun("omkar"));
-
-function calculateCart(val1,val2,...nums1){
-  console.log(`this is v1:${val1}`)
-  console.log(`this is v2:${val2}`)
-  // console.log("this is v2:"`${val2}`)
-  // // console.log(val2);
-
-
-  return nums1
-}
-
-console.log(calculateCart(24,2,1,6));
+console.log(fun(val1,val2))
 
 
