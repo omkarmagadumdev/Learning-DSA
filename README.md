@@ -2731,9 +2731,22 @@ var maxSlidingWindow = function(arr, k) {
 };
      
 ```
-6. [🔗]()
-```js
 
+# Binary tree
+1. Preorder Traversal - Recursive Approach[🔗](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+```js
+var preorderTraversal = function(root) {
+    let ans = [];
+    function traversal(curr){
+        if(!curr) return;
+        ans.push(curr.val);
+        traversal(curr.left);
+        traversal(curr.right);
+    }
+    traversal(root);
+    return ans;
+};
+     
 ```
 6. [🔗]()
 ```js
